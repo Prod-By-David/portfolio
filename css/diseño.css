@@ -63,30 +63,26 @@ nav {
   padding: 1rem 20px;
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
 }
-.logo {
-  font-weight: 700;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  color: var(--accent);
-  cursor: default;
-  display: flex;
-  align-items: center;
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Posiciona el botón en la esquina derecha */
+  top: 50%;
+  transform: translateY(-50%);
 }
-.logo svg {
+
+.menu-toggle span {
+  background-color: var(--accent);
   display: block;
-  max-height: 50px;
-  width: auto;
-  stroke: var(--accent);
-  margin-right: 10px;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -119,16 +115,28 @@ nav {
     max-height: 500px;
   }
 }
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Añade espacio entre los elementos del navbar */
+}
+
+.nav-links a {
+  position: relative;
+  padding: 10px 0; /* Ajusta el padding para separar los elementos */
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
   background: var(--accent);
-  bottom: -4px;
+  bottom: 0;
   left: 0;
   transition: width 0.3s ease;
 }
+
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
